@@ -1,6 +1,7 @@
 # Weather App
 
-A full-stack Rust weather application using Yew for the frontend and Rocket for the backend. Fetches real-time weather data with customizable location search.
+A full-stack Rust weather application using Yew for the frontend and Rocket for the backend. 
+Uses www.weatherapi.com to get current weather data from user input.
 
 ## Features
 - Real-time weather data display
