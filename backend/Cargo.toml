@@ -1,0 +1,30 @@
+[package]
+name = "weather_app_backend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+weather_app_shared = { path = "../shared" }
+rocket = { version = "0.5.0-rc.3", features = ["json", "tls"] }
+rocket_cors = { version = "0.6", features = ["default"] }
+reqwest = { version = "0.11", features = ["json"] }
+tokio = { version = "1.0", features = ["full"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+env_logger = "0.10"
+sqlx = { version = "0.8.2", features = [
+    "runtime-tokio-rustls",
+    "postgres",
+    "uuid",
+    "chrono",
+    "json",
+    "migrate"
+], default-features = false }
+uuid = { version = "1.4", features = ["v4", "serde"] }
+shuttle-runtime = "0.48.0"
+shuttle-rocket = "0.48.0"
+shuttle-shared-db = { version = "0.48.0", features = ["postgres", "sqlx"] }
+include_dir = "0.6"
+
+[build-dependencies]
+include_dir = "0.6"

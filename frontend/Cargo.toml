@@ -1,0 +1,15 @@
+[package]
+name = "weather_app_frontend"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+weather_app_shared = { path = "../shared" }
+yew = { version = "0.20", features = ["csr"] }
+gloo-net = "0.4"
+wasm-bindgen = "0.2"
+wasm-bindgen-futures = "0.4"
+web-sys = { version = "0.3", features = ["HtmlInputElement", "Window", "Storage", "Document"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+chrono = "0.4"

@@ -1,0 +1,9 @@
+[build]
+target = "index.html"
+dist = "dist"
+release = false
+
+[[hooks]]
+stage = "post_build"
+command = "sh"
+command_arguments = ["-c", "mkdir -p ../backend/static && cp -r dist/* ../backend/static/ 2>/dev/null || true"]
