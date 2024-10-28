@@ -12,7 +12,7 @@ A full-stack Rust weather application using Yew for the frontend and Rocket for 
 ## Setup
 ```bash
 git clone https://github.com/jaymasl/rust-weather-app.git
-cd weather-app
+cd rust-weather-app
 ./build.sh
 ```
 
