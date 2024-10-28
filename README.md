@@ -14,6 +14,15 @@ Uses www.weatherapi.com to get current weather data from user input.
 ```bash
 git clone https://github.com/jaymasl/rust-weather-app.git
 cd rust-weather-app
+```
+
+Create Secrets.toml in the backend/ directory with your WEATHER_API_KEY set.
+```rust
+WEATHER_API_KEY = "your API key"
+```
+
+Run the build script in the rust-weather-app/ directory
+```bash
 ./build.sh
 ```
 
