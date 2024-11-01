@@ -43,6 +43,7 @@ pub struct Current {
     pub uv: f64,
     pub gust_mph: f64,
     pub gust_kph: f64,
+    #[serde(default)]
     pub air_quality: Option<AirQuality>,
 }
 
@@ -54,13 +55,34 @@ pub struct Condition {
 
 #[derive(Serialize, Deserialize, Clone, Debug, PartialEq)]
 pub struct AirQuality {
-    pub co: f64,
-    pub no2: f64,
-    pub o3: f64,
-    pub so2: f64,
-    #[serde(rename = "pm2_5")]
-    pub pm2_5: f64,
-    pub pm10: f64,
-    #[serde(rename = "us-epa-index")]
-    pub us_epa_index: i32,
+    #[serde(default)]
+    pub co: Option<f64>,
+    #[serde(default)]
+    pub no2: Option<f64>,
+    #[serde(default)]
+    pub o3: Option<f64>,
+    #[serde(default)]
+    pub so2: Option<f64>,
+    #[serde(rename = "pm2_5", default)]
+    pub pm2_5: Option<f64>,
+    #[serde(default)]
+    pub pm10: Option<f64>,
+    #[serde(rename = "us-epa-index", default)]
+    pub us_epa_index: Option<i32>,
+}
+
+impl AirQuality {
+    pub fn is_complete(&self) -> bool {
+        self.co.is_some() 
+            && self.no2.is_some() 
+            && self.o3.is_some() 
+            && self.so2.is_some() 
+            && self.pm2_5.is_some() 
+            && self.pm10.is_some() 
+            && self.us_epa_index.is_some()
+    }
+
+    pub fn get_epa_index(&self) -> Option<i32> {
+        self.us_epa_index
+    }
 }
