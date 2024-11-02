@@ -1,7 +1,6 @@
 # Weather App
 
-A full-stack Rust weather application using Yew for the frontend and Rocket for the backend. 
-Uses www.weatherapi.com to get current weather data from user input.
+This is a full-stack weather application built entirely in Rust, using Yew (WebAssembly) for the frontend and Rocket for the backend. Users can search for cities to view detailed weather information including temperature (in both °C and °F), conditions, air quality, and location details, with support for dark/light themes. The backend integrates with WeatherAPI.com and stores all search requests in a PostgreSQL database (tracking user IP, user agent, search query, and full weather data), implements rate limiting (5-second delay between requests), and includes comprehensive error handling. The app features a responsive design with loading states, user-friendly error messages, and proper security measures like CORS support and request validation.
 
 ## Features
 - Real-time weather data display
