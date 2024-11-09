@@ -2,7 +2,7 @@
 pub struct Styles;
 
 impl Styles {
-    pub const CONTAINER: &'static str = "min-h-screen bg-stone-200 dark:bg-black transition-all duration-300";
+    pub const CONTAINER: &'static str = "min-h-screen bg-white dark:bg-black transition-all duration-300";
     pub const CONTENT_WRAPPER: &'static str = "container mx-auto px-4 py-6 max-w-2xl transition-all duration-300";
     pub const GRID_CONTAINER: &'static str = "grid grid-cols-1 lg:grid-cols-3 gap-4";
     pub const MAIN_CONTENT: &'static str = "lg:col-span-2 space-y-4";
